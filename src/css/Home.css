@@ -1,0 +1,603 @@
+/* Home.css */
+
+.home {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #3a0f24 0%, #8a2a4f 100%);
+  color: white;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin-bottom: 3rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Fixed highlight class to ensure it works everywhere */
+.highlight {
+  color: #ffd700 !important;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.primary-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.primary-button:hover {
+  background-color: #3d8b40;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.secondary-button:hover {
+  background-color: white;
+  color: #8a2a4f;
+}
+
+/* Combined Download and Screenshots Section */
+.download-screenshot-section {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 4rem;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.download-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2.5rem;
+  backdrop-filter: blur(5px);
+}
+
+.download-content {
+  text-align: left;
+}
+
+.download-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.download-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Fixed Download Button Styles */
+.download-button {
+  display: flex !important;
+  align-items: center !important;
+  background-color: #333 !important;
+  color: white !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  transition: transform 0.2s, background-color 0.3s !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.download-button:hover {
+  transform: translateY(-3px) !important;
+  background-color: #444 !important;
+}
+
+.download-button img {
+  height: 24px !important;
+  width: auto !important;
+  margin-right: 8px !important;
+  filter: none !important;
+  background: transparent !important;
+}
+
+.download-button span {
+  color: white !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+
+.android {
+  background-color: #333 !important;
+}
+
+.screenshots-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.app-screenshot {
+  height: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border: 8px solid #fff;
+  transition: transform 0.3s;
+}
+
+.app-screenshot:hover {
+  transform: translateY(-10px);
+}
+
+/* Features Preview Styles - FIXED */
+.features-preview {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.feature {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 1.5rem !important;
+  backdrop-filter: blur(5px) !important;
+  flex: 1 !important;
+  text-align: center !important;
+  transition: transform 0.3s !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.feature:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.feature-icon {
+  width: 60px !important;
+  height: 60px !important;
+  margin: 0 auto 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+/* Add this class for all icon images */
+.icon-image {
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: contain !important;
+  background-color: transparent !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.feature h3 {
+  margin-bottom: 0.5rem !important;
+  color: white !important;
+  font-size: 1.3rem !important;
+}
+
+.feature p {
+  color: white !important;
+  opacity: 0.9 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Earn More Section Styles */
+.earn-more-section {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 4rem;
+  padding: 2.5rem 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+.earn-more-intro {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.earning-methods {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.earning-method {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.earning-method:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.earning-method-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background-color: rgba(255, 215, 0, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.earning-method-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.earning-method h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.earning-method p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Our Vision Section Styles */
+.vision-section {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+}
+
+.vision-content {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background-color: #ffd700;
+  border-radius: 3px;
+}
+
+/* Fix for section title highlights */
+.section-title .highlight {
+  color: #ffd700 !important;
+}
+
+.vision-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.vision-text {
+  flex: 3;
+  text-align: left;
+}
+
+.vision-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.vision-image-container {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.vision-image {
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.vision-image:hover {
+  transform: scale(1.03);
+}
+
+/* User Stats Section Styles */
+.user-stats-section {
+  width: 100%;
+  margin-top: 4rem;
+  padding: 4rem 2rem;
+  background-image: url('../assets/community-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  border-radius: 0;
+}
+
+.user-stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.stats-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stats-intro {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stats-counters {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 1.5rem;
+  background-color: rgba(255, 215, 0, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.stat-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.stat-numbers {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.join-community-button {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffd700, #ffb300);
+  color: #333;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 1rem;
+}
+
+.join-community-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+  .download-screenshot-section {
+    flex-direction: column;
+  }
+  
+  .download-side, .screenshots-side {
+    width: 100%;
+  }
+  
+  .download-content {
+    text-align: center;
+  }
+  
+  .download-buttons {
+    justify-content: center;
+  }
+  
+  .screenshots-side {
+    margin-top: 2rem;
+  }
+  
+  .features-preview {
+    flex-direction: column;
+  }
+  
+  .earning-methods {
+    flex-direction: column;
+  }
+  
+  .earning-method {
+    margin-bottom: 1.5rem;
+  }
+  
+  .vision-container {
+    flex-direction: column;
+  }
+  
+  .vision-image-container {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-counters {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .stat-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .download-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .download-content p {
+    font-size: 1rem;
+  }
+  
+  .app-screenshot {
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .vision-description {
+    font-size: 1rem;
+  }
+  
+  .earning-method-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .earning-method h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .user-stats-section {
+    padding: 3rem 1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.7rem;
+  }
+  
+  .join-community-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
