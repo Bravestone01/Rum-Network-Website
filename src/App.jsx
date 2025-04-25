@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import WhitePaper from "./pages/WhitePaper";
 import Roadmap from './pages/Roadmap';
 import Features from './pages/Features';
-import FAQ from './pages/Faq';
+import FAQ from './pages/FAQ';
 import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
