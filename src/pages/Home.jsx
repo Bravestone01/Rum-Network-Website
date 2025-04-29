@@ -12,10 +12,33 @@ import convertPointsImage from "../assets/convert-points.png";
 import userIcon from "../assets/user-icon.png";
 import activeUserIcon from "../assets/active-user-icon.png"; 
 import Footer from "../components/Footer";
+import { Helmet } from 'react-helmet-async';
+
 
 const Home = () => {
   return (
     <div className="home">
+      {/* SEO Metadata */}
+      <Helmet>
+        <title>RUM Network – Earn Crypto with Mobile Mining</title>
+        <meta name="description" content="Join RUM Network to earn crypto through mobile mining. Decentralized, eco-friendly, and secure – the future of mining." />
+        <meta name="keywords" content="RUM Network, crypto mining, earn crypto, mobile mining, decentralized network, Pi Network alternative" />
+        <meta name="author" content="RUM Network Team" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph Meta Tags for Social Sharing */}
+        <meta property="og:title" content="RUM Network – Earn Crypto with Mobile Mining" />
+        <meta property="og:description" content="Join RUM Network to earn crypto securely through mobile mining. The best Pi Network alternative." />
+        <meta property="og:image" content="https://rum-network-website.vercel.app/og-image.png" />
+        <meta property="og:url" content="https://rum-network-website.vercel.app/" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="RUM Network – Earn Crypto with Mobile Mining" />
+        <meta name="twitter:description" content="Join RUM Network and mine crypto safely on your phone." />
+        <meta name="twitter:image" content="https://rum-network-website.vercel.app/og-image.png" />
+      </Helmet>
       {/* Header */}
       <Header />
 
