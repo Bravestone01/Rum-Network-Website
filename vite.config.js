@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     ViteSitemap({
-      hostname: 'https://rum-network-website.vercel.app', 
+      hostname: 'https://rum-network-website.vercel.app/', 
     })
   ],
 })
