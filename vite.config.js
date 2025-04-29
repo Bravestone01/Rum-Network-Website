@@ -7,6 +7,15 @@ export default defineConfig({
     react(),
     ViteSitemap({
       hostname: 'https://rum-network-website.vercel.app',
+      routes: [
+        '/',
+        '/whitepaper',
+        '/roadmap',
+        '/features',
+        '/faq',
+        '/terms',
+        '/privacy'
+      ],
       changefreq: 'daily',
       priority: 1.0,
       lastmod: new Date().toISOString(),
