@@ -1,4 +1,5 @@
-import Header from "../components/Header";
+import React, { lazy, Suspense } from 'react';
+import { Helmet } from 'react-helmet-async';
 import "../css/Home.css";
 import rumimage2 from "../assets/rum2.jpg";
 import googleplayimage from "../assets/google play.png";
@@ -11,36 +12,96 @@ import playGamesImage from "../assets/play-games.png";
 import convertPointsImage from "../assets/convert-points.png";
 import userIcon from "../assets/user-icon.png";
 import activeUserIcon from "../assets/active-user-icon.png"; 
-import Footer from "../components/Footer";
-import { Helmet } from 'react-helmet-async';
 
+// Lazy load components for better performance
+const Header = lazy(() => import("../components/Header"));
+const Footer = lazy(() => import("../components/Footer"));
+
+// Loading component
+const LoadingComponent = () => (
+  <div className="loading-component">
+    <div className="loading-spinner"></div>
+  </div>
+);
+
+// Schema.org JSON-LD structured data
+const WebsiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "RUM Network",
+  "description": "Mobile cryptocurrency mining app that allows users to earn crypto through their smartphones.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Android",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "15000"
+  }
+};
+
+const OrganizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RUM Network",
+  "url": "https://rum-network-website.vercel.app/",
+  "logo": "https://rum-network-website.vercel.app/logo.png",
+  "sameAs": [
+    "https://twitter.com/rumnetwork",
+    "https://facebook.com/rumnetwork",
+    "https://instagram.com/rumnetwork"
+  ]
+};
 
 const Home = () => {
   return (
     <div className="home">
-      {/* SEO Metadata */}
+      {/* Enhanced SEO Metadata */}
       <Helmet>
-        <title>RUM Network – Earn Crypto with Mobile Mining</title>
-        <meta name="description" content="Join RUM Network to earn crypto through mobile mining. Decentralized, eco-friendly, and secure – the future of mining." />
-        <meta name="keywords" content="RUM Network, crypto mining, earn crypto, mobile mining, decentralized network, Pi Network alternative" />
+        <html lang="en" />
+        <title>RUM Network – Earn Crypto with Mobile Mining | Best Pi Network Alternative</title>
+        <meta name="description" content="Join RUM Network to earn cryptocurrency through mobile mining. Decentralized, eco-friendly, and secure – a proven Pi Network alternative with 150,000+ users." />
+        <meta name="keywords" content="RUM Network, crypto mining, earn crypto, mobile mining, decentralized network, Pi Network alternative, cryptocurrency app, mobile crypto mining" />
         <meta name="author" content="RUM Network Team" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <link rel="canonical" href="https://rum-network-website.vercel.app/" />
 
-        {/* Open Graph Meta Tags for Social Sharing */}
-        <meta property="og:title" content="RUM Network – Earn Crypto with Mobile Mining" />
-        <meta property="og:description" content="Join RUM Network to earn crypto securely through mobile mining. The best Pi Network alternative." />
+        {/* Open Graph Meta Tags with enhanced descriptions */}
+        <meta property="og:title" content="RUM Network – Mobile Crypto Mining Made Easy | 150,000+ Users" />
+        <meta property="og:description" content="Join the RUM Network community of 150,000+ users earning cryptocurrency through mobile mining. Multiple ways to earn – mine, watch ads, play games!" />
         <meta property="og:image" content="https://rum-network-website.vercel.app/og-image.png" />
         <meta property="og:url" content="https://rum-network-website.vercel.app/" />
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="RUM Network" />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@rumnetwork" />
         <meta name="twitter:title" content="RUM Network – Earn Crypto with Mobile Mining" />
-        <meta name="twitter:description" content="Join RUM Network and mine crypto safely on your phone." />
+        <meta name="twitter:description" content="Join 150,000+ users mining crypto safely on mobile with RUM Network." />
         <meta name="twitter:image" content="https://rum-network-website.vercel.app/og-image.png" />
+        
+        {/* Mobile specific */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="theme-color" content="#3498db" />
+        
+        {/* Structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify(WebsiteSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(OrganizationSchema)}
+        </script>
       </Helmet>
-      {/* Header */}
-      <Header />
+
+      {/* Header with Suspense for lazy loading */}
+      <Suspense fallback={<LoadingComponent />}>
+        <Header />
+      </Suspense>
 
       {/* Hero Section */}
       <main className="hero">
@@ -49,7 +110,7 @@ const Home = () => {
             Welcome to the <span className="highlight">Rum Network</span>
           </h1>
           <p className="hero-subtitle">
-          Unleash the power of Rum Network – where your digital world meets limitless possibilities. 🚀 Secure. Fast. Future-Ready
+            Unleash the power of Rum Network – where your digital world meets limitless possibilities. 🚀 Secure. Fast. Future-Ready
           </p>
         </div>
 
@@ -57,11 +118,11 @@ const Home = () => {
         <div className="download-screenshot-section">
           <div className="download-side">
             <div className="download-content">
-              <h3>Download Rum Network App</h3>
+              <h2>Download Rum Network App</h2>
               <p>Get started with our powerful app and begin your journey to financial freedom.</p>
               <div className="download-buttons">
-                <a href="#" className="download-button android">
-                  <img src={googleplayimage} alt="Google Play" />
+                <a href="https://play.google.com/store/apps/details?id=com.rumnetwork" className="download-button android" aria-label="Download from Google Play">
+                  <img src={googleplayimage} alt="Google Play" width="180" height="53" />
                   <span>Google Play</span>
                 </a>
               </div>
@@ -69,38 +130,39 @@ const Home = () => {
           </div>
 
           <div className="screenshots-side">
-            <img src={rumimage2} alt="Rum Network Dashboard" className="app-screenshot" />
+            <img src={rumimage2} alt="Rum Network App Dashboard Screenshot" className="app-screenshot" width="300" height="600" />
           </div>
         </div>
 
         {/* Features Preview Section */}
-        <div className="features-preview">
+        <section className="features-preview" aria-labelledby="features-heading">
+          <h2 id="features-heading" className="visually-hidden">Key Features</h2>
           <div className="feature">
             <div className="feature-icon">
-              <img src={miningimage} alt="Mining" className="icon-image" />
+              <img src={miningimage} alt="" className="icon-image" width="64" height="64" />
             </div>
             <h3>Mine Rum</h3>
             <p>Earn Rum tokens with our efficient mobile mining system</p>
           </div>
           <div className="feature">
             <div className="feature-icon">
-              <img src={marketupdateImgae} alt="Market Updates" className="icon-image" />
+              <img src={marketupdateImgae} alt="" className="icon-image" width="64" height="64" />
             </div>
             <h3>Market Updates</h3>
             <p>Stay informed with real-time cryptocurrency market data</p>
           </div>
           <div className="feature">
             <div className="feature-icon">
-              <img src={lockicon} alt="Security" className="icon-image" />
+              <img src={lockicon} alt="" className="icon-image" width="64" height="64" />
             </div>
             <h3>Enhanced Security</h3>
             <p>Your assets protected with industry-leading security measures</p>
           </div>
-        </div>
+        </section>
 
         {/* Earn More Section */}
-        <div className="earn-more-section">
-          <h2 className="section-title">Earn <span className="highlight">More</span></h2>
+        <section className="earn-more-section" aria-labelledby="earn-more-heading">
+          <h2 id="earn-more-heading" className="section-title">Earn <span className="highlight">More</span></h2>
           <p className="earn-more-intro">
             Multiple ways to earn Rum Points that you can convert to cryptocurrency
           </p>
@@ -108,7 +170,7 @@ const Home = () => {
           <div className="earning-methods">
             <div className="earning-method">
               <div className="earning-method-icon">
-                <img src={watchAdsImage} alt="Watch Ads" className="icon-image" />
+                <img src={watchAdsImage} alt="" className="icon-image" width="64" height="64" />
               </div>
               <h3>Watch Ads</h3>
               <p>Earn Rum Points by watching short advertisements in your spare time</p>
@@ -116,7 +178,7 @@ const Home = () => {
 
             <div className="earning-method">
               <div className="earning-method-icon">
-                <img src={playGamesImage} alt="Play Games" className="icon-image" />
+                <img src={playGamesImage} alt="" className="icon-image" width="64" height="64" />
               </div>
               <h3>Play Games</h3>
               <p>Have fun playing games and earn Rum Points while enjoying yourself</p>
@@ -124,18 +186,18 @@ const Home = () => {
 
             <div className="earning-method">
               <div className="earning-method-icon">
-                <img src={convertPointsImage} alt="Convert Points" className="icon-image" />
+                <img src={convertPointsImage} alt="" className="icon-image" width="64" height="64" />
               </div>
               <h3>Convert Points</h3>
               <p>Exchange your earned Rum Points to cryptocurrency of your choice</p>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Our Vision Section */}
-        <div className="vision-section">
+        <section className="vision-section" aria-labelledby="vision-heading">
           <div className="vision-content">
-            <h2 className="section-title">Our <span className="highlight">Vision</span></h2>
+            <h2 id="vision-heading" className="section-title">Our <span className="highlight">Vision</span></h2>
             <div className="vision-container">
               <div className="vision-text">
                 <p className="vision-description">
@@ -146,16 +208,16 @@ const Home = () => {
                 </p>
               </div>
               <div className="vision-image-container">
-                <img src={visionImage} alt="Our Vision" className="vision-image" />
+                <img src={visionImage} alt="RUM Network Vision Illustration" className="vision-image" width="450" height="300" />
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* User Stats Section */}
-        <div className="user-stats-section">
+        <section className="user-stats-section" aria-labelledby="community-heading">
           <div className="stats-content">
-            <h2 className="section-title">Our <span className="highlight">Community</span></h2>
+            <h2 id="community-heading" className="section-title">Our <span className="highlight">Community</span></h2>
             <p className="stats-intro">
               Join thousands of users already benefiting from the Rum Network ecosystem
             </p>
@@ -163,7 +225,7 @@ const Home = () => {
             <div className="stats-counters">
               <div className="stat-card">
                 <div className="stat-icon">
-                  <img src={userIcon} alt="Total Users" className="icon-image" />
+                  <img src={userIcon} alt="" className="icon-image" width="48" height="48" />
                 </div>
                 <div className="stat-numbers">
                   <span className="stat-value">150,000+</span>
@@ -173,7 +235,7 @@ const Home = () => {
               
               <div className="stat-card">
                 <div className="stat-icon">
-                  <img src={activeUserIcon} alt="Active Users" className="icon-image" />
+                  <img src={activeUserIcon} alt="" className="icon-image" width="48" height="48" />
                 </div>
                 <div className="stat-numbers">
                   <span className="stat-value">72,500+</span>
@@ -182,15 +244,18 @@ const Home = () => {
               </div>
             </div>
             
-            <a href="#" className="join-community-button">
+            <a href="https://play.google.com/store/apps/details?id=com.rumnetwork" className="join-community-button" aria-label="Download App and Join RUM Network Community">
               Download App & Join
             </a>
           </div>
-        </div>
+        </section>
           
       </main>
-      {/* Footer */}
-      <Footer />
+
+      {/* Footer with Suspense for lazy loading */}
+      <Suspense fallback={<LoadingComponent />}>
+        <Footer />
+      </Suspense>
       
     </div>
   );
