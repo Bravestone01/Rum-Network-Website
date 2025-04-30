@@ -11,7 +11,7 @@ import watchAdsImage from "../assets/watch-ads.png";
 import playGamesImage from "../assets/play-games.png";
 import convertPointsImage from "../assets/convert-points.png";
 import userIcon from "../assets/user-icon.png";
-import activeUserIcon from "../assets/active-user-icon.png"; 
+import activeUserIcon from "../assets/active-user-icon.png";
 
 // Lazy load components for better performance
 const Header = lazy(() => import("../components/Header"));
@@ -84,11 +84,11 @@ const Home = () => {
         <meta name="twitter:title" content="RUM Network – Earn Crypto with Mobile Mining" />
         <meta name="twitter:description" content="Join 150,000+ users mining crypto safely on mobile with RUM Network." />
         <meta name="twitter:image" content="https://rum-network-website.vercel.app/og-image.png" />
-        
+
         {/* Mobile specific */}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#3498db" />
-        
+
         {/* Structured data */}
         <script type="application/ld+json">
           {JSON.stringify(WebsiteSchema)}
@@ -136,27 +136,29 @@ const Home = () => {
 
         {/* Features Preview Section */}
         <section className="features-preview" aria-labelledby="features-heading">
-          <h2 id="features-heading" className="visually-hidden">Key Features</h2>
-          <div className="feature">
-            <div className="feature-icon">
-              <img src={miningimage} alt="" className="icon-image" width="64" height="64" />
+          <h2 id="features-heading" className="section-title">Key <span className="highlight">Features</span></h2>
+          <div className="features-container">
+            <div className="feature">
+              <div className="feature-icon">
+                <img src={miningimage} alt="" className="icon-image" width="64" height="64" />
+              </div>
+              <h3>Mine RUM</h3>
+              <p>Earn RUM tokens with our efficient mobile mining system</p>
             </div>
-            <h3>Mine Rum</h3>
-            <p>Earn Rum tokens with our efficient mobile mining system</p>
-          </div>
-          <div className="feature">
-            <div className="feature-icon">
-              <img src={marketupdateImgae} alt="" className="icon-image" width="64" height="64" />
+            <div className="feature">
+              <div className="feature-icon">
+                <img src={marketupdateImgae} alt="" className="icon-image" width="64" height="64" />
+              </div>
+              <h3>Market Updates</h3>
+              <p>Stay informed with real-time cryptocurrency market data</p>
             </div>
-            <h3>Market Updates</h3>
-            <p>Stay informed with real-time cryptocurrency market data</p>
-          </div>
-          <div className="feature">
-            <div className="feature-icon">
-              <img src={lockicon} alt="" className="icon-image" width="64" height="64" />
+            <div className="feature">
+              <div className="feature-icon">
+                <img src={lockicon} alt="" className="icon-image" width="64" height="64" />
+              </div>
+              <h3>Enhanced Security</h3>
+              <p>Your assets protected with industry-leading security measures</p>
             </div>
-            <h3>Enhanced Security</h3>
-            <p>Your assets protected with industry-leading security measures</p>
           </div>
         </section>
 
@@ -221,7 +223,7 @@ const Home = () => {
             <p className="stats-intro">
               Join thousands of users already benefiting from the Rum Network ecosystem
             </p>
-            
+
             <div className="stats-counters">
               <div className="stat-card">
                 <div className="stat-icon">
@@ -232,7 +234,7 @@ const Home = () => {
                   <span className="stat-label">Total Users</span>
                 </div>
               </div>
-              
+
               <div className="stat-card">
                 <div className="stat-icon">
                   <img src={activeUserIcon} alt="" className="icon-image" width="48" height="48" />
@@ -243,20 +245,20 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            
+
             <a href="https://play.google.com/store/apps/details?id=com.rumnetwork" className="join-community-button" aria-label="Download App and Join RUM Network Community">
               Download App & Join
             </a>
           </div>
         </section>
-          
+
       </main>
 
       {/* Footer with Suspense for lazy loading */}
       <Suspense fallback={<LoadingComponent />}>
         <Footer />
       </Suspense>
-      
+
     </div>
   );
 };
