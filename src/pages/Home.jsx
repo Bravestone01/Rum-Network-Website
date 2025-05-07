@@ -51,9 +51,9 @@ const OrganizationSchema = {
   "url": "https://rum-network-website.vercel.app/",
   "logo": "https://rum-network-website.vercel.app/logo.png",
   "sameAs": [
-    "https://twitter.com/rumnetwork",
-    "https://facebook.com/rumnetwork",
-    "https://instagram.com/rumnetwork"
+    "https://x.com/RumNetwork",
+    "https://web.facebook.com/profile.php?id=61574861663584",
+    "https://www.instagram.com/rumnetwork/?hl=en"
   ]
 };
 
