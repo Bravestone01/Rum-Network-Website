@@ -1,13 +1,8 @@
-// 1. Pehle react-helmet-async package install karein
-// npm install react-helmet-async
-
-// 2. App.jsx mein update karein
-
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
-// Lazy loaded components
+
 const Home = lazy(() => import("./pages/Home"));
 const WhitePaper = lazy(() => import("./pages/WhitePaper"));
 const Roadmap = lazy(() => import('./pages/Roadmap'));
