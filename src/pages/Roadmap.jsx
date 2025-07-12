@@ -14,7 +14,7 @@ const Roadmap = () => {
             completed: false,
             items: [
                 { id: 1, text: "Website Launch", completed: true },
-                { id: 2, text: "App Launch on Play Store", completed: false }
+                { id: 2, text: "App Launch on Play Store", completed: true }
             ]
         },
         // Phase 2: Community Growth & KYC
