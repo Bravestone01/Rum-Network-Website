@@ -1,0 +1,27 @@
+.child-safety-hero {
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    padding: 60px 0;
+    color: white;
+}
+.child-safety-content {
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 12px;
+    margin-top: -40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.child-safety-content h2 {
+    color: #222;
+    margin-bottom: 15px;
+}
+.child-safety-content h3 {
+    margin-top: 25px;
+    color: #444;
+}
+.child-safety-content ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+.child-safety-content li {
+    margin-bottom: 8px;
+}
