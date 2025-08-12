@@ -10,7 +10,7 @@ const Features = lazy(() => import('./pages/Features'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const ChildSafetyStandards = lazy(() => import('./pages/ChildSafetyStandards')); // ✅ New Page
+const ChildSafetyStandards = lazy(() => import('./pages/ChildSafetyStandards'));
 
 const PageLoader = () => (
   <div className="page-loading">
@@ -31,7 +31,7 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/terms" element={<TermsAndConditions />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/child-safety" element={<ChildSafetyStandards />} /> {/* ✅ Added Route */}
+           <Route path="/child-safety" element={<ChildSafetyStandards />} />{/* ✅ Added Route */}
           </Routes>
         </Suspense>
       </Router>
